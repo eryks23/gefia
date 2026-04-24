@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polska Nowoczesna - Szlak Technologiczny</title>
+    <meta name="description" content="Polska Nowoczesna: Szlak Technologiczny - 10 miast innowacji i cyfrowego rozwoju. Turystyka biznesowa w Polsce.">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #001f3f;
+    --secondary: #0066cc;
+    --accent: #00d9ff;
+    --dark-bg: #0a0e27;
+    --text-light: #e0e0e0;
+    --text-muted: #999;
+    --border: rgba(0, 217, 255, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    .nav-logo {
+        font-size: 1rem;
+    }
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a0033 100%);
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 217, 255, 0.15), transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), #66ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(0, 217, 255, 0.5);
+}
+
+/* SECTION STYLES */
+section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* MOTYW SECTION */
+.section-motyw {
+    background: linear-gradient(180deg, var(--dark-bg) 0%, #0f1535 100%);
+}
+
+.motyw-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.motyw-text h3 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.motyw-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.motyw-text strong {
+    color: var(--accent);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(0, 102, 204, 0.05));
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 102, 204, 0.1));
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 102, 204, 0.08));
+    border-left: 4px solid var(--accent);
+    padding: 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.highlight-box h4 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* MIASTA SECTION */
+.section-miasta {
+    background: var(--dark-bg);
+}
+
+.miasta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.city-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.03), rgba(0, 102, 204, 0.03));
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.city-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 217, 255, 0.1);
+}
+
+.city-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+.city-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.city-card:hover .city-image img {
+    transform: scale(1.05);
+}
+
+.city-header {
+    background: linear-gradient(135deg, var(--primary), #0033aa);
+    padding: 1.5rem;
+    border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+}
+
+.city-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent);
+    margin: 0;
+}
+
+.city-tagline {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.city-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.city-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.city-content h4 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 700;
+}
+
+.city-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.city-list li {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.city-list li:before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.5rem;
+}
+
+.city-list strong {
+    color: var(--accent);
+}
+
+.city-insight {
+    background: rgba(0, 217, 255, 0.08);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    color: #ccc;
+    border-radius: 3px;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* PODSUMOWANIE SECTION */
+.section-podsumowanie {
+    background: linear-gradient(180deg, #0f1535 0%, var(--dark-bg) 100%);
+}
+
+.podsumowanie-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.podsumowanie-text h3 {
+    font-size: 1.6rem;
+    color: var(--accent);
+    margin: 2rem 0 1rem 0;
+    font-weight: 700;
+}
+
+.podsumowanie-text h3:first-child {
+    margin-top: 0;
+}
+
+.podsumowanie-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.podsumowanie-text strong {
+    color: var(--accent);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timeline-item {
+    background: rgba(10, 14, 39, 0.5);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+.timeline-year {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.cta-section {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 102, 204, 0.08));
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cta-section h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+/* AUTOR SECTION */
+.section-autor {
+    background: var(--dark-bg);
+}
+
+.autor-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.autor-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(0, 102, 204, 0.05));
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.autor-card h3 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.autor-card p {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.autor-card strong {
+    color: var(--accent);
+}
+
+.struktura-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.struktura-item {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 102, 204, 0.08));
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.struktura-item h4 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.struktura-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(180deg, var(--dark-bg), #000);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .motyw-content, .podsumowanie-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .miasta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        margin-top: 70px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#top" class="nav-logo">🇵🇱 POLSKA NOWOCZESNA</a>
+            <ul class="nav-menu">
+                <li><a href="#motyw" class="nav-link">Motyw</a></li>
+                <li><a href="#miasta" class="nav-link">10 Miast</a></li>
+                <li><a href="#podsumowanie" class="nav-link">Podsumowanie</a></li>
+                <li><a href="#autor" class="nav-link">O Projekcie</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="top">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">POLSKA NOWOCZESNA</h1>
+            <p class="hero-subtitle">Szlak Technologiczny i Innowacji</p>
+            <p class="hero-tagline">Odkryj 10 miast które zmieniają przyszłość technologii w Polsce</p>
+            <a href="#motyw" class="cta-button">Odkryj Szlak</a>
+        </div>
+    </section>
+
+    <!-- SECTION 1: MOTYW WYCIECZKI -->
+    <section class="section-motyw" id="motyw">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Motyw Wycieczki: Szlak Technologiczny</h2>
+                <p class="section-subtitle">Polska Transformacja - Od Przemysłu Ciężkiego do Gospodarki Wiedzy i Innowacji</p>
+            </div>
+
+            <div class="motyw-content">
+                <div class="motyw-text">
+                    <h3>Dlaczego Szlak Technologiczny?</h3>
+                    <p>
+                        Polska dokonała spektakularnej transformacji. W ciągu ostatnich 35 lat przemieniła się z gospodarki opartej na ciężkim przemyśle w nowoczesny hub technologiczny i ośrodek innowacji. Nie są to zabytkowe mury czy kościoły – to <strong>żywe laboratoria gospodarki XXI wieku</strong>.
+                    </p>
+                    <p>
+                        Szlak Technologiczny to podróż po 10 polskich miastach, które są epicentrami <strong>turystyki biznesowej (MICE)</strong> – przyciągają inwestorów, naukowców, przedsiębiorców i specjalistów z całego świata szukających nowych szans biznesowych i edukacyjnych.
+                    </p>
+                    <p>
+                        To nie tradycyjna wycieczka turystyczna. To <strong>turystyka biznesowa i edukacyjna</strong> – odkrywanie miejsc, gdzie powstają rozwiązania dla światowych problemów, gdzie polska innowacyjność i technologia zmieniają rzeczywistość.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4>Pięć Filarów Transformacji Polski</h4>
+                        <p>
+                            ✓ <strong>FinTech & Bankowość</strong> (Warszawa)<br>
+                            ✓ <strong>Usługi Biznesowe</strong> (Kraków, Lublin)<br>
+                            ✓ <strong>Technologia & R&D</strong> (Wrocław, Gdańsk)<br>
+                            ✓ <strong>Przemysł 4.0</strong> (Rzeszów)<br>
+                            ✓ <strong>Gry & Kreatywność</strong> (Łódź, Katowice)
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Polska w Liczbach</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">250K+</div>
+                            <div class="stat-label">Inżynierów IT</div>
+                            <p>Armia specjalistów dla globalnych projektów R&D</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">#6</div>
+                            <div class="stat-label">w Europie</div>
+                            <p>Eksport technologii i usług cyfrowych</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Młodych</div>
+                            <p>z wyższym wykształceniem w wiekach 25-34</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1,500+</div>
+                            <div class="stat-label">Startupów</div>
+                            <p>Aktywny ekosystem przedsiębiorczości</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">35 Lat</div>
+                            <div class="stat-label">Transformacji</div>
+                            <p>Od rozpadu ZSRR do lidera technologicznego</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15M+</div>
+                            <div class="stat-label">Uczestników MICE</div>
+                            <p>Turystyka biznesowa rocznie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: 10 MIAST NA SZLAKU -->
+    <section class="section-miasta" id="miasta">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">10 Miast Szlaku Innowacji</h2>
+                <p class="section-subtitle">Żywe laboratoria, które zmieniają gospodarkę Europy Środkowo-Wschodniej</p>
+            </div>
+
+            <div class="miasta-grid">
+                <!-- WARSZAWA -->
+                <article class="city-card" style="animation-delay: 0.1s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1538097304804-2a1b932466a9?auto=format&fit=crop&w=800&q=80" alt="Warszawa - Centrum FinTech i wieżowce technologiczne">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">WARSZAWA</h3>
+                        <p class="city-tagline">Centrum FinTech i Technologiczna Europa</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Warszawa – stolica Polski, która podniosła się z ruin II wojny światowej – jest dzisiaj finansowym i technologicznym sercem Europy Środkowo-Wschodniej.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>Varso Tower:</strong> 310m – najwyższy budynek w Unii Europejskiej</li>
+                            <li><strong>Giełda Papierów Wartościowych:</strong> Kapitalizacja ponad 300 mld EUR</li>
+                            <li><strong>Sektor FinTech:</strong> Ponad 70 banków i instytucji finansowych</li>
+                            <li><strong>Specjaliści IT:</strong> 70,000+ profesjonalistów</li>
+                            <li><strong>Giganci Tech:</strong> Google, Microsoft, Samsung – siedziby regionalne</li>
+                            <li><strong>Infrastruktura MICE:</strong> Nowoczesne centra konferencyjne i hale wystawiennicze</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Warszawa to główne centrum decyzyjne dla inwestycji technologicznych w Europie Środkowo-Wschodniej. Konferencje biznesowe przyciągają rocznie tysiące przedsiębiorców szukających okazji."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- KRAKÓW -->
+                <article class="city-card" style="animation-delay: 0.2s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1520697233316-87dfe8b8cce0?auto=format&fit=crop&w=800&q=80" alt="Kraków - Rynek Główny i nowoczesne biurowce">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">KRAKÓW</h3>
+                        <p class="city-tagline">Lider Usług Biznesowych (BPO/SSC)</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Kraków łączy tysiącletnią historię z nowoczesnym sektorem usług biznesowych. Miasto przyciąga jak magnes centra outsourcingowe największych światowych korporacji.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>Pracownicy BPO/SSC:</strong> 80,000+ specjalistów</li>
+                            <li><strong>IBM Kraków:</strong> Największy pracodawca technologiczny w Polsce</li>
+                            <li><strong>Globalne Korporacje:</strong> Shell, Motorola, Accenture, Capgemini</li>
+                            <li><strong>Uniwersytet Jagielloński:</strong> Tradycja nauczania od 1364 roku</li>
+                            <li><strong>ICE Kraków:</strong> Jedno z największych centrów konferencyjnych w Europie</li>
+                            <li><strong>Turystyka + Tech:</strong> Specjaliści żyją w kulturowo bogatym mieście</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Kraków łączy konkurencyjność kosztową, wykwalifikowanych pracowników i światowej klasy infrastrukturę biznesową – idealne miejsce dla turystyki biznesowej."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- WROCŁAW -->
+                <article class="city-card" style="animation-delay: 0.3s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1512403754473-27835f7b9984?auto=format&fit=crop&w=800&q=80" alt="Wrocław - Nowoczesne technologiczne kampusy">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">WROCŁAW</h3>
+                        <p class="city-tagline">Polska Dolina Krzemowa</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Wrocław to ukryty skarb Europy i dynamicznie rozwijający się ośrodek innowacji. Przyciąga startupy i międzynarodowe centra R&D dzięki świetnym warunkom operacyjnym.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>Wrocławski Park Technologiczny:</strong> Kampusy, inkubatory, akceleratory</li>
+                            <li><strong>Politechnika Wrocławska:</strong> Główny ośrodek badań naukowych i edukacji</li>
+                            <li><strong>Kreatywne centrum:</strong> Galerie, studia designu, agencje kreatywne</li>
+                            <li><strong>Specjaliści IT:</strong> 50,000+ profesjonalistów</li>
+                            <li><strong>Koszty konkurencyjne:</strong> Znacznie niższe niż miasta zachodniej Europy</li>
+                            <li><strong>Giganci R&D:</strong> Nokia, Volvo, Orange</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Wrocław to miejsce, gdzie rodzą się startupy. Korporacyjni inwestorzy znajdują doskonały balans kosztów, jakości życia i świetnej edukacji."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- POZNAŃ -->
+                <article class="city-card" style="animation-delay: 0.4s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1592634421160-c3d31b2682df?auto=format&fit=crop&w=800&q=80" alt="Poznań - Międzynarodowe Targi i nowoczesne logistyka">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">POZNAŃ</h3>
+                        <p class="city-tagline">Europejska Brama Handlowa i E-commerce</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Poznań historycznie był ośrodkiem wymiany handlowej. Dziś pozostaje bramą dla rynków zagranicznych, stawiając na zaawansowane innowacje w handlu elektronicznym i logistyce 4.0.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>MTP (Międzynarodowe Targi):</strong> Wydarzenia przyciągające miliony gości</li>
+                            <li><strong>Centrum E-commerce:</strong> Siedziba największych firm handlu internetowego</li>
+                            <li><strong>Logistyka 4.0:</strong> Zautomatyzowane węzły dystrybucyjne</li>
+                            <li><strong>Innowacyjne Oprogramowanie:</strong> Systemy WMS i TMS wspomagane sztuczną inteligencją</li>
+                            <li><strong>Badania i Robotyka:</strong> Projekty autonomicznego transportu</li>
+                            <li><strong>Infrastruktura MICE:</strong> Nowoczesne obiekty konferencyjne</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Poznań to strategiczny gracz w globalnym łańcuchu dostaw. Zaawansowana technologia płynnie spotyka się z biznesem na dużą skalę."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- GDAŃSK -->
+                <article class="city-card" style="animation-delay: 0.5s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1510410778403-f0505b38ed33?auto=format&fit=crop&w=800&q=80" alt="Gdańsk - Port nowoczesny i innowacje morskie">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">GDAŃSK</h3>
+                        <p class="city-tagline">Innowacje Morskie i Technologie IT</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Gdańsk, historyczny port handlowy, jest nowoczesnym ośrodkiem innowacji morskich. Parki naukowo-technologiczne pracują nad rozwiązaniami dla żeglugi XXI wieku.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>Parki Naukowo-Technologiczne:</strong> Inkubatory projektów gospodarki morskiej</li>
+                            <li><strong>Statki Hybrydowe i LNG:</strong> Innowacyjne projekty redukujące emisję CO2</li>
+                            <li><strong>Farmy Wiatrowe (Offshore):</strong> Transformacja energetyczna Morza Bałtyckiego</li>
+                            <li><strong>Branża IT i Gier:</strong> Dziesiątki tysięcy ekspertów w Trójmieście</li>
+                            <li><strong>Symbolika Solidarności:</strong> Od zniszczeń wojennych do supernowoczesności</li>
+                            <li><strong>Centra obliczeniowe:</strong> Światowej klasy infrastruktura dla Big Data i chmury</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Gdańsk symbolizuje niezłomną odbudowę – od zniszczeń, przez walkę o wolność, po centrum ekologicznych innowacji morskich."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- GDYNIA -->
+                <article class="city-card" style="animation-delay: 0.6s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8ed745eb33?auto=format&fit=crop&w=800&q=80" alt="Gdynia - Terminal portu z AI i automatyzacją">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">GDYNIA</h3>
+                        <p class="city-tagline">Sztuczna Inteligencja w Logistyce i Inteligentny Port</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Gdynia to miasto przyszłości w dziedzinie mobilności i logistyki. Terminal BCT to żywe laboratorium sztucznej inteligencji stosowanej do operacji portowych.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>Terminal BCT:</strong> AI podnosząca wydajność, redukująca emisje</li>
+                            <li><strong>Elektromobilność:</strong> Trolejbusy, autobusy elektryczne, nowoczesne zasilanie</li>
+                            <li><strong>Inteligentny Port:</strong> Internet rzeczy (IoT) monitorujący infrastrukturę</li>
+                            <li><strong>Badania Morskie:</strong> Instytuty oceanografii i ochrony Bałtyku</li>
+                            <li><strong>Startupy z branży morskiej:</strong> Nowoczesne oprogramowanie handlu morskiego</li>
+                            <li><strong>Turystyka Biznesowa:</strong> Ponad 2 miliony odwiedzających rocznie</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Gdynia udowadnia, że ciężka logistyka może być w pełni cyfrowa i ekologiczna – polskie okno na ocean innowacji."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- ŁÓDŹ -->
+                <article class="city-card" style="animation-delay: 0.7s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1555529902-5261145633bf?auto=format&fit=crop&w=800&q=80" alt="Łódź - Manufaktura rewitalizowana, animacja i gry">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">ŁÓDŹ</h3>
+                        <p class="city-tagline">Od Fabryki do Kreatywności – Efekty Wizualne i Animacja</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Łódź to studium przypadku rewitalizacji miast przemysłowych. Potężne miasto tekstylne przeobraziło się w europejskie centrum przemysłów kreatywnych i produkcji gier.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>Manufaktura:</strong> Fabryka zrewitalizowana na nowoczesne centrum spotkań</li>
+                            <li><strong>Szkoła Filmowa:</strong> Legendarna uczelnia kształcąca reżyserów i operatorów</li>
+                            <li><strong>Efekty Wizualne (VFX):</strong> Studia współpracujące z Hollywood</li>
+                            <li><strong>Przemysły Kreatywne:</strong> Setki agencji i firm cyfrowej rozrywki</li>
+                            <li><strong>Tworzenie gier (Game Development):</strong> Studia o zasięgu międzynarodowym</li>
+                            <li><strong>Infrastruktura eventowa:</strong> Nowoczesne obiekty dla branży MICE</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Łódź stanowi dowód, że przemysł można wymyślić na nowo. Dawne hale fabryczne są dziś biurami przyciągającymi twórców z całego świata."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- KATOWICE -->
+                <article class="city-card" style="animation-delay: 0.8s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1641830635298-b80c10b4278e?auto=format&fit=crop&w=800&q=80" alt="Katowice - Arena e-sportu, datacenter i gry">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">KATOWICE</h3>
+                        <p class="city-tagline">Od Węgla do E-Sportu i Przetwarzania w Chmurze</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Katowice to spektakularna historia transformacji. Miasto górnicze Śląska musiało się przeobrazić i wybrało przemianę – dziś jest stolicą e-sportu i technologii chmurowych.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>IEM Katowice:</strong> Jeden z największych turniejów e-sportowych na świecie</li>
+                            <li><strong>Strefa Kultury:</strong> Muzeum Śląskie, NOSPR, hale koncertowe</li>
+                            <li><strong>Rewitalizacja:</strong> Tereny kopalni stały się nowoczesnymi przestrzeniami publicznymi</li>
+                            <li><strong>Branża Gier:</strong> Studia deweloperskie i prężne zespoły e-sportowe</li>
+                            <li><strong>Centra Danych:</strong> Nowoczesna infrastruktura chmurowa (AWS, Azure)</li>
+                            <li><strong>MCK Katowice:</strong> Światowej klasy obiekt eventowy dla MICE</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Katowice to idealne studium udanej transformacji miasta. Setki tysięcy fanów e-sportu pokazują siłę nowej, cyfrowej gospodarki."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- LUBLIN -->
+                <article class="city-card" style="animation-delay: 0.9s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1607590867803-fb71de49bc98?auto=format&fit=crop&w=800&q=80" alt="Lublin - Agrotechnologia, drony i edukacja technologiczna">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">LUBLIN</h3>
+                        <p class="city-tagline">Agrotechnologia i Wschodnie Centrum IT</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Lublin to wschodnia gwiazda polskiego IT. Łączy akademicką tradycję (70,000 studentów) z nowymi szansami biznesowymi, szczególnie w sektorze agrotechnologii i logistyki.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>Akademia:</strong> Ponad 70,000 studentów – potężne zaplecze naukowe</li>
+                            <li><strong>Rewolucja Agrotechnologiczna:</strong> Startupy wprowadzające sztuczną inteligencję do rolnictwa</li>
+                            <li><strong>Drony i Monitoring:</strong> Systemy precyzyjnego badania i nawożenia pól</li>
+                            <li><strong>Brama Wschodnia:</strong> Idealne położenie dla biznesu transgranicznego</li>
+                            <li><strong>Parki Technologiczne:</strong> Badania nad nowoczesną ekologią</li>
+                            <li><strong>Ekosystem Startupów:</strong> Prężne inkubatory i fundusze wspierające</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Lublin to przyszłość zaawansowanego technologicznie rolnictwa. Świat musi być bardziej ekologiczny – tutejsze ośrodki stoją na czele rozwiązań XXI wieku."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- RZESZÓW -->
+                <article class="city-card" style="animation-delay: 1s;">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1540968221243-29f5d70440f3?auto=format&fit=crop&w=800&q=80" alt="Rzeszów - Dolina Lotnicza, komponenty lotnicze">
+                    </div>
+                    <div class="city-header">
+                        <h3 class="city-name">RZESZÓW</h3>
+                        <p class="city-tagline">Dolina Lotnicza Europy</p>
+                    </div>
+                    <div class="city-content">
+                        <p>Rzeszów to polska Dolina Krzemowa w branży lotnictwa. Epicentrum europejskiego przemysłu lotniczego, gdzie produkuje się zaawansowane komponenty dla Airbusa i Boeinga.</p>
+                        <h4>Kluczowe Dane:</h4>
+                        <ul class="city-list">
+                            <li><strong>PZL Rzeszów:</strong> Producent elementów dla silników odrzutowych</li>
+                            <li><strong>Komponenty Precyzyjne:</strong> Części m.in. dla Boeing 777, 787, Bombardier</li>
+                            <li><strong>Klaster Lotniczy:</strong> Ponad 160 firm, 32,000 wykwalifikowanych inżynierów</li>
+                            <li><strong>Certyfikowana Produkcja:</strong> Zaawansowane technologicznie łopatki turbinowe</li>
+                            <li><strong>Strefa Technologiczna:</strong> Strefy ekonomiczne z korzystnymi ulgami</li>
+                            <li><strong>R&D i Edukacja:</strong> Nowoczesne instytuty badawcze i uczelnie techniczne</li>
+                        </ul>
+                        <p class="city-insight">
+                            "Rzeszów to zielone światło dla inwestycji lotniczych w Europie. Tradycja inżynierska połączona z najnowocześniejszą technologią."
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PODSUMOWANIE -->
+    <section class="section-podsumowanie" id="podsumowanie">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Szlak Innowacji: Nowa Marka Narodowa Polski</h2>
+                <p class="section-subtitle">Turystyka Biznesowa i Refleksja nad Przyszłością</p>
+            </div>
+
+            <div class="podsumowanie-content">
+                <div class="podsumowanie-text">
+                    <h3>Znaczenie Turystyczne Szlaku Innowacji</h3>
+                    <p>
+                        Polska pisze nową kartę swojej historii – nie w muzeach czy na stronach podręczników, ale w zaawansowanych laboratoriach, biurowcach, inkubatorach startupów i firmach wdrażających nowoczesne technologie. Szlak Technologiczny to <strong>nowa wizytówka Polski</strong> dla turystyki biznesowej (MICE).
+                    </p>
+                    <p>
+                        Sektor MICE przyciąga rocznie do Polski <strong>miliony gości</strong> – uczestników wielkich konferencji, targów innowacji czy imprez e-sportowych. Każdy z nich przyjeżdża szukając nie tylko dobrego klimatu do biznesu, ale przede wszystkim <strong>nowej wiedzy i inspiracji</strong>.
+                    </p>
+                    <p>
+                        Taka postawa zmienia sposób, w jaki społeczność międzynarodowa postrzega Polskę – nie jako kraj o trudnej przeszłości, ale jako <strong>dynamiczny naród tworzący rozwiązania dla problemów jutra</strong>.
+                    </p>
+
+                    <h3>Od Historii do Przyszłości</h3>
+                    <p>
+                        Jesteśmy świadkami niezwykłej ewolucji. Na początku lat 90. funkcjonowaliśmy w realiach przestarzałego przemysłu ciężkiego. Dziś eksportujemy <strong>własność intelektualną, kod komputerowy i innowacje</strong>.
+                    </p>
+                    <p>
+                        Marki z polskim rodowodem, gry komputerowe, silniki lotnicze czy algorytmy wspierające globalną logistykę – to nasz technologiczny manifest dla świata. Potrafimy genialnie <strong>łączyć dziedzictwo z postępem</strong>.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4>Kluczowe Wnioski</h4>
+                        <p>
+                            ✓ Polska przeistoczyła się z producenta dóbr konsumpcyjnych w twórcę innowacyjnych idei<br>
+                            ✓ Turystyka biznesowa (MICE) to nowy, kluczowy filar gospodarki<br>
+                            ✓ 10 miast na szlaku zatrudnia łącznie kilkaset tysięcy specjalistów technologicznych<br>
+                            ✓ Inwestycje zagraniczne z sektora R&D systematycznie rosną (miliardy EUR rocznie)<br>
+                            ✓ Młoda demografia i silne ośrodki akademickie kształtują przyszłość kraju
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Polska Transformacja</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1989</div>
+                            <div class="timeline-title">Koniec Komunizmu, Start Wolnego Rynku</div>
+                            <p>Odejście od gospodarki centralnie sterowanej. Pierwsze prywatne przedsiębiorstwa. Czas wielkich wyzwań i nowych szans.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1995-2003</div>
+                            <div class="timeline-title">Era Usług Biznesowych (BPO)</div>
+                            <p>Zachodnie korporacje odkrywają wysokiej klasy specjalistów. Powstają pierwsze potężne centra usług biznesowych w Polsce.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2004</div>
+                            <div class="timeline-title">Akcesja do Unii Europejskiej</div>
+                            <p>Integracja z zachodnimi rynkami. Masowe inwestycje zagraniczne. Polska staje się pewną bramą do Europy Wschodniej.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2008-2012</div>
+                            <div class="timeline-title">Rozwój Startupów i Cyfrowych Innowacji</div>
+                            <p>Pojawia się nowa generacja przedsiębiorców. Polskie gry zyskują rozgłos na świecie. Powstają centra badawcze globalnych gigantów.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015-2020</div>
+                            <div class="timeline-title">Transformacja Cyfrowa</div>
+                            <p>Sztuczna inteligencja, uczenie maszynowe, technologie chmurowe. Polska staje się liderem w zaawansowanych usługach cyfrowych.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025+</div>
+                            <div class="timeline-title">Era Globalnego Lidera</div>
+                            <p>Polska ugruntowuje swoją pozycję globalnego gracza w technologii i innowacjach. Turystyka biznesowa (MICE) notuje rekordowe wskaźniki.</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-section">
+                        <h3>Zaproszenie do Odkrycia Szlaku Innowacji</h3>
+                        <p>
+                            Niniejszy projekt zaprasza na wirtualną i realną podróż po polskich ośrodkach technologicznych – miejscach, gdzie nowoczesne pomysły każdego dnia przekuwane są w rzeczywistość.
+                        </p>
+                        <p>
+                            Szlak Technologiczny to propozycja dla uczniów, nauczycieli, inwestorów i turystów poszukujących inspiracji i chcących zrozumieć mechanizmy transformacji gospodarczej Polski.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: O PROJEKCIE -->
+    <section class="section-autor" id="autor">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O Projekcie</h2>
+            </div>
+
+            <div class="autor-info">
+                <div class="autor-card">
+                    <h3>Polska Nowoczesna - Szlak Technologiczny</h3>
+                    <p><strong>Temat Główny:</strong> Turystyka w Polsce – 10 miast z wspólnym motywem</p>
+                    <p><strong>Wybrany Motyw:</strong> Szlak Technologiczny i Innowacji</p>
+                    <p><strong>Typ Projektu:</strong> Cyfrowa opowieść edukacyjna – Turystyka Biznesowa (MICE)</p>
+                    <p><strong>Autor:</strong> Eryk Mazurek</p>
+                    <p><strong>Klasa:</strong> 4 Technikum</p>
+                    <p><strong>Rok:</strong> 2025 | <strong>Termin:</strong> 24.04.2025</p>
+                </div>
+
+                <div class="struktura-grid">
+                    <div class="struktura-item">
+                        <h4>Część 1: Motyw Wycieczki</h4>
+                        <p>
+                            Metamorfoza Polski od ciężkiego przemysłu do gospodarki opartej na wiedzy i innowacjach. Szlak Technologiczny jako nowa marka dla turystyki biznesowej (MICE). Pięć filarów: Technologie Finansowe, Usługi Biznesowe, Zaawansowane Technologie, Przemysł 4.0, Kreatywność.
+                        </p>
+                    </div>
+                    <div class="struktura-item">
+                        <h4>Część 2: 10 Miast</h4>
+                        <p>
+                            Szczegółowe opisy każdego miasta: Warszawa (Finanse), Kraków (Usługi Biznesowe), Wrocław (Badania i Rozwój), Poznań (E-commerce), Gdańsk (IT/Innowacje morskie), Gdynia (Logistyka cyfrowa), Łódź (Efekty Wizualne), Katowice (E-Sport), Lublin (Agrotechnologia), Rzeszów (Przemysł lotniczy). Każdy wpis zawiera statystyki i znaczenie turystyczne.
+                        </p>
+                    </div>
+                    <div class="struktura-item">
+                        <h4>Część 3: Podsumowanie</h4>
+                        <p>
+                            Refleksja nad znaczeniem szlaku innowacji dla marki Polski. Oś czasu transformacji (1989-2025). Turystyka biznesowa jako nowy filar silnej gospodarki. Polska jako cyfrowy lider Europy Środkowo-Wschodniej i perspektywa na przyszłość.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="struktura-item" style="grid-column: 1 / -1; margin-top: 2rem;">
+                    <h4>Metodologia i Źródła</h4>
+                    <p>
+                        <strong>Analiza geograficzna:</strong> Rozkład przestrzenny klastrów technologicznych w Polsce<br>
+                        <strong>Analiza ekonomiczna:</strong> Sektory gospodarcze, zatrudnienie specjalistów, inwestycje<br>
+                        <strong>Turystyka biznesowa:</strong> Potencjał MICE i infrastruktura eventowa na najwyższym poziomie<br>
+                        <strong>Wizualizacja:</strong> Interaktywna prezentacja z responsywnym designem<br>
+                        <strong>Źródła:</strong> GUS, PAIH, Eurostat, raporty sektorowe, oficjalne portale miast
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Polska Nowoczesna - Szlak Technologiczny</p>
+            <p>Projekt: Geografia Gospodarcza | Turystyka w Polsce | Autor: Eryk Mazurek, Klasa 4 Technikum</p>
+            <p>Cyfrowa opowieść o Turystyce Biznesowej (MICE) i Transformacji Gospodarczej Polski | Termin oddania: 24.04.2025</p>
+        </div>
+    </footer>
+
+    <script>
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Animations on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+document.querySelectorAll('.city-card, .stat-card, .timeline-item, .struktura-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+});
+
+console.log('✅ Polska Nowoczesna - Szlak Technologiczny loaded successfully');
+    </script>
+</body>
+</html>
